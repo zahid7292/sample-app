@@ -1,13 +1,52 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+
+import { connect } from "react-redux";
 
 class Category extends Component {
-    render() {
-        return (
-            <div>
-                This is Category Home Page
-            </div>
-        );
-    }
+  render() {
+    const { categoryList, history } = this.props;
+    console.log(this.props);
+
+    return (
+      <div>
+        <h2>Category Home</h2>
+
+        <button onClick={_ => history.push(`/category/create`)}>Add</button>
+
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Desc</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {categoryList.map((category, idx) => (
+                <tr key={idx}>
+                  <td>{category.name}</td>
+                  <td>{category.desc}</td>
+                  <td>
+                    <button
+                      onClick={_ =>
+                        history.push(`/category/${category.id}/edit`)
+                      }
+                    >
+                      edit
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Category;
+const mapStateToProps = state => ({ categoryList: state.category.data });
+
+export default connect(mapStateToProps)(Category);
