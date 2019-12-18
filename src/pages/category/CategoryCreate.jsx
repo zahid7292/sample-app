@@ -11,7 +11,6 @@ class CategoryCreate extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state.category);
     this.props.dispatch(createCategory(this.state.category));
 
     this.props.history.push("/category");
@@ -28,7 +27,6 @@ class CategoryCreate extends Component {
 
   render() {
     const { category } = this.state;
-    console.log(this.props);
     return (
       <div>
         <h2>Category Create Page</h2>

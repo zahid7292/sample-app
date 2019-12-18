@@ -1,4 +1,4 @@
-import { CREATE_CATEGORY, EDIT_CATEGORY } from "../actions/categoryAction";
+import { CREATE_CATEGORY, EDIT_CATEGORY, DELETE_CATEGORY } from "../actions/categoryAction";
 
 const initialState = {
   data: [
@@ -15,6 +15,10 @@ export default (state = initialState, action) => {
       action.payload
     ];
     return { ...state, data };
+  } else if (action.type === DELETE_CATEGORY ) {
+    
+        
   }
+
   return state;
 };

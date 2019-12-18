@@ -2,17 +2,16 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 
+
 class Category extends Component {
   render() {
     const { categoryList, history } = this.props;
-    console.log(this.props);
 
     return (
       <div>
         <h2>Category Home</h2>
 
-        <button onClick={_ => history.push(`/category/create`)}>Add</button>
-
+        <button onClick={_ => history.push(`/category/create`)}>Add New</button>
         <div>
           <table>
             <thead>
@@ -34,7 +33,14 @@ class Category extends Component {
                         history.push(`/category/${category.id}/edit`)
                       }
                     >
-                      edit
+                      Edit
+                    </button>
+                    <button 
+                      onClick={_=>
+                        history.push(`/category/${category.id}/delete`)
+                      }
+                    >
+                    Delete
                     </button>
                   </td>
                 </tr>
