@@ -11,9 +11,8 @@ class CategoryEdit extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state.category);
     this.props.dispatch(editCategory(this.state.category));
-
+    
     this.props.history.push("/category");
   };
 

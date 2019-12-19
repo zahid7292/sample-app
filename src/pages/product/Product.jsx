@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
 
 class Product extends Component {
+
   render() {
     const { categoryList, productList, history } = this.props;
-    console.log({categoryList, productList});
-
     return (
       <div>
         <h2>Product Home</h2>
@@ -49,7 +47,6 @@ class Product extends Component {
             </tbody>
           </table>
         </div>
-        <button onClick={_ => console.log(categoryList)}>Get D</button>
       </div>
     );
   }

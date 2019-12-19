@@ -5,9 +5,9 @@ import { Link, Switch, Route, BrowserRouter } from "react-router-dom";
 import Category from "./pages/category/Category";
 import CategoryCreate from "./pages/category/CategoryCreate";
 import CategoryEdit from "./pages/category/CategoryEdit";
-import Product from './pages/product/Product'
-import ProductEdit from './pages/product/ProductEdit'
-import ProductCreate from './pages/product/ProductCreate'
+import Product from "./pages/product/Product";
+import ProductEdit from "./pages/product/ProductEdit";
+import ProductCreate from "./pages/product/ProductCreate";
 
 import store from "./store";
 
@@ -18,7 +18,7 @@ function App() {
         <BrowserRouter>
           <ul>
             <li>
-              <Link to="/category">Category</Link>
+              <Link to="/category" >Category</Link>
             </li>
             <li>
               <Link to="/product">Product</Link>

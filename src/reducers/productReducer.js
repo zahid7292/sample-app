@@ -18,7 +18,6 @@ export default (state = initialState, action) => {
       action.payload
     ];
     return { ...state, data };
-  }
-
+  } 
   return state;
 };
