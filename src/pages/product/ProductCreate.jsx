@@ -11,7 +11,6 @@ class ProductCreate extends Component {
     
     onSubmit = e => {
         e.preventDefault();
-        console.log(this.state.product);
         this.props.dispatch(creatProduct(this.state.product))        
         this.props.history.push('/product')
     }
